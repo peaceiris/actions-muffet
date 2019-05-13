@@ -22,7 +22,13 @@ workflow "Main workflow" {
   resolves = ["muffet"]
 }
 
+action "is-branch-master" {
+  uses = "actions/bin/filter@master"
+  args = "branch master"
+}
+
 action "muffet" {
+  needs = "is-branch-master"
   uses = "peaceiris/actions-muffet@v0.5.3"
   args = ["https://example.com"]
 }

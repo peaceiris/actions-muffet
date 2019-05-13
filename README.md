@@ -23,7 +23,7 @@ workflow "Main workflow" {
 }
 
 action "muffet" {
-  uses = "peaceiris/actions-muffet@0.5.3"
+  uses = "peaceiris/actions-muffet@v0.5.3"
   args = ["https://example.com"]
 }
 ```
